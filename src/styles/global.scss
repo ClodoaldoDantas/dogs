@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --type-first: 'Roboto', sans-serif;
+  --type-second: 'Roboto Slab', serif;
+}
+
+body {
+  margin: 0;
+  color: #333;
+  font-family: var(--type-first);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  display: block;
+  font-family: var(--type-first);
+  font-size: 1rem;
+  color: #333;
+}
+
+.container {
+  max-width: 50rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
