@@ -7,17 +7,23 @@ import LoginPasswordLost from './LoginPasswordLost';
 import LoginPasswordReset from './LoginPasswordReset';
 import { UserContext } from '../../context/UserContext';
 
+import './styles.scss';
+
 export default function Login() {
   const { isLogged } = useContext(UserContext);
 
   if (isLogged) return <Navigate to='/conta' />;
 
   return (
-    <Routes>
-      <Route path='/' element={<LoginForm />} />
-      <Route path='criar' element={<LoginCreate />} />
-      <Route path='perdeu' element={<LoginPasswordLost />} />
-      <Route path='resetar' element={<LoginPasswordReset />} />
-    </Routes>
+    <section className='login'>
+      <div className='login-forms'>
+        <Routes>
+          <Route path='/' element={<LoginForm />} />
+          <Route path='criar' element={<LoginCreate />} />
+          <Route path='perdeu' element={<LoginPasswordLost />} />
+          <Route path='resetar' element={<LoginPasswordReset />} />
+        </Routes>
+      </div>
+    </section>
   );
 }

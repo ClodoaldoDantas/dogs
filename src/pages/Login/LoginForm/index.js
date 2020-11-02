@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
+import Error from '../../../components/Error';
 import { useForm } from '../../../hooks/useForm';
 import { UserContext } from '../../../context/UserContext';
+
+import './style.scss';
 
 export default function LoginForm() {
   const username = useForm();
@@ -15,14 +18,14 @@ export default function LoginForm() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    if (username.validate() || password.validate()) {
+    if (username.validate() && password.validate()) {
       userLogin(username.value, password.value);
     }
   }
 
   return (
-    <section>
-      <h1>Login</h1>
+    <section className='login-form animeLeft'>
+      <h1 className='title'>Login</h1>
       <form onSubmit={handleSubmit}>
         <Input type='text' name='username' label='Usuário' {...username} />
         <Input type='password' name='password' label='Senha' {...password} />
@@ -31,10 +34,17 @@ export default function LoginForm() {
         ) : (
           <Button>Enviar</Button>
         )}
-        {error && <p>{error}</p>}
+        <Error message={error} />
       </form>
 
-      <Link to='/login/criar'>Cadastro</Link>
+      <Link className='lost' to='/login/perdeu'>
+        Perdeu a senha ?
+      </Link>
+      <div className='register'>
+        <h2 className='register-title'>Cadastre-se</h2>
+        <p>Ainda não possui conta? Cadastre-se no site</p>
+        <Button href='/login/criar'>Cadastro</Button>
+      </div>
     </section>
   );
 }

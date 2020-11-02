@@ -1,4 +1,5 @@
 import React from 'react';
+import Error from '../Error';
 import './styles.scss';
 
 export default function Input({
@@ -24,7 +25,7 @@ export default function Input({
         onChange={onChange}
         onBlur={onBlur}
       />
-      {error && <p className='error'>{error}</p>}
+      <Error message={error} />
     </div>
   );
 }
