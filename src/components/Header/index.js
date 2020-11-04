@@ -9,18 +9,18 @@ export default function Header() {
 
   return (
     <header className='header'>
-      <nav className='nav container'>
-        <Link className='logo' to='/' aria-label='Dogs - Home'>
+      <nav className='header-nav container'>
+        <Link className='header-logo' to='/' aria-label='Dogs - Home'>
           <Dogs />
         </Link>
         {data && data.email}
         {data ? (
-          <Link className='login' to='/conta'>
+          <Link className='header-login' to='/conta'>
             {data.nome}
             <button onClick={userLogout}>Sair</button>
           </Link>
         ) : (
-          <Link className='login' to='/login'>
+          <Link className='header-login' to='/login'>
             Login / Criar
           </Link>
         )}

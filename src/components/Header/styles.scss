@@ -6,18 +6,18 @@
   z-index: 100;
   background-color: #fff;
 
-  .nav {
+  &-nav {
     height: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  .logo {
+  &-logo {
     padding: 0.5rem 0;
   }
 
-  .login {
+  &-login {
     color: #333;
     display: flex;
     align-items: center;
