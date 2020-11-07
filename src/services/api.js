@@ -47,6 +47,18 @@ const api = {
       },
     };
   },
+  photoPost(formData, token) {
+    return {
+      url: `${baseUrl}/api/photo`,
+      options: {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      },
+    };
+  },
 };
 
 export default api;
