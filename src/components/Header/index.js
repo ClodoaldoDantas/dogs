@@ -5,7 +5,7 @@ import './styles.scss';
 import { UserContext } from '../../context/UserContext';
 
 export default function Header() {
-  const { data, userLogout } = useContext(UserContext);
+  const { data } = useContext(UserContext);
 
   return (
     <header className='header'>
@@ -13,11 +13,9 @@ export default function Header() {
         <Link className='header-logo' to='/' aria-label='Dogs - Home'>
           <Dogs />
         </Link>
-        {data && data.email}
         {data ? (
           <Link className='header-login' to='/conta'>
             {data.nome}
-            <button onClick={userLogout}>Sair</button>
           </Link>
         ) : (
           <Link className='header-login' to='/login'>
