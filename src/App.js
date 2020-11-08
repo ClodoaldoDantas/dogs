@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from './components/Header';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import User from './pages/User';
@@ -20,7 +20,7 @@ const App = () => {
           <Route path='/login/*' element={<Login />} />
           <ProtectedRoute path='/conta/*' element={<User />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </UserProvider>
     </BrowserRouter>
   );

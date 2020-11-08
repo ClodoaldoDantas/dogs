@@ -4,11 +4,11 @@ import Input from '../../../components/Input';
 import Button from '../../../components/Button';
 import { useForm } from '../../../hooks/useForm';
 import { useFetch } from '../../../hooks/useFetch';
-import api from '../../../services/api';
-
-import './styles.scss';
 import Error from '../../../components/Error';
 import { useNavigate } from 'react-router-dom';
+
+import api from '../../../services/api';
+import './styles.scss';
 
 export default function UserPhotoPost() {
   const nome = useForm();

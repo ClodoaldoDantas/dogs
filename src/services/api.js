@@ -59,6 +59,24 @@ const api = {
       },
     };
   },
+  photosGet({ page, total, user }) {
+    return {
+      url: `${baseUrl}/api/photo?_page=${page}&_total=${total}&_user=${user}`,
+      options: {
+        method: 'GET',
+        cache: 'no-store',
+      },
+    };
+  },
+  photoGet(id) {
+    return {
+      url: `${baseUrl}/api/photo/${id}`,
+      options: {
+        method: 'GET',
+        cache: 'no-store',
+      },
+    };
+  },
 };
 
 export default api;
