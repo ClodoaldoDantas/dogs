@@ -4,6 +4,8 @@ import { useFetch } from '../../../hooks/useFetch';
 import Error from '../../Error';
 import api from '../../../services/api';
 
+import './styles.scss';
+
 export default function PhotoCommentsForm({ id, setComments }) {
   const { error, request } = useFetch();
   const [comment, setComment] = useState('');
@@ -20,7 +22,7 @@ export default function PhotoCommentsForm({ id, setComments }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='photo-comments-form' onSubmit={handleSubmit}>
       <textarea
         placeholder='Comente ...'
         id='comment'

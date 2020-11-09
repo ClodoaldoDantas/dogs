@@ -1,0 +1,62 @@
+.photo-comments-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  margin: 1rem;
+
+  textarea {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    font-family: var(--type-first);
+    resize: none;
+    border: 1px solid #eee;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    background-color: #eee;
+    transition: 200ms;
+
+    &:focus,
+    &:hover {
+      outline: none;
+      border-color: #fb1;
+      background: white;
+      box-shadow: 0 0 0 3px #fea;
+    }
+  }
+
+  button {
+    border: none;
+    cursor: pointer;
+    color: #333;
+    background: transparent;
+    font-size: 1rem;
+    padding: 0 1rem;
+    overflow: hidden;
+
+    &:focus,
+    &:hover {
+      outline: none;
+    }
+
+    &:focus svg g.latir,
+    &:hover svg g.latir {
+      animation: latir 0.6s infinite;
+    }
+
+    &:focus svg path,
+    &:hover svg path {
+      fill: #fea;
+      stroke: #fb1;
+    }
+  }
+}
+
+@keyframes latir {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
