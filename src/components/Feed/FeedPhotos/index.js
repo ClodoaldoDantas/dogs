@@ -14,9 +14,7 @@ export default function FeedPhotos({ setModalPhoto }) {
   useEffect(() => {
     async function fetchPhotos() {
       const { url, options } = api.photosGet({ page: 1, total: 6, user: 0 });
-      const { response, json } = await request(url, options);
-
-      console.log(response, json);
+      request(url, options);
     }
 
     fetchPhotos();

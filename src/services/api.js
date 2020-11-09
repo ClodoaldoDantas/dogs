@@ -77,6 +77,19 @@ const api = {
       },
     };
   },
+  commentPost(id, body) {
+    return {
+      url: `${baseUrl}/api/comment/${id}`,
+      options: {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+        body: JSON.stringify(body),
+      },
+    };
+  },
 };
 
 export default api;
