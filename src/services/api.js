@@ -77,6 +77,17 @@ const api = {
       },
     };
   },
+  photoDelete(id) {
+    return {
+      url: `${baseUrl}/api/photo/${id}`,
+      options: {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      },
+    };
+  },
   commentPost(id, body) {
     return {
       url: `${baseUrl}/api/comment/${id}`,
