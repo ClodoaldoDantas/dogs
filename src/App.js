@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Header from './components/Header';
-// import Footer from './components/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import User from './pages/User';
@@ -9,6 +8,7 @@ import User from './pages/User';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { UserProvider } from './context/UserContext';
 import ProtectedRoute from './utils/ProtectedRoute';
+// import Footer from './components/Footer';
 
 const App = () => {
   return (
