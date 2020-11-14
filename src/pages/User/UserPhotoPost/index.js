@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 import api from '../../../services/api';
 import './styles.scss';
+import Head from '../../../components/Head';
 
 export default function UserPhotoPost() {
   const nome = useForm();
@@ -42,6 +43,7 @@ export default function UserPhotoPost() {
 
   return (
     <section className='photo-post animeLeft'>
+      <Head title='Poste sua foto' />
       <form onSubmit={handleSubmit}>
         <Input label='Nome' type='text' name='nome' {...nome} />
         <Input label='Peso' type='number' name='peso' {...peso} />
