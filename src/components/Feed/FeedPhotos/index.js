@@ -8,17 +8,22 @@ import api from '../../../services/api';
 
 import './styles.scss';
 
-export default function FeedPhotos({ setModalPhoto }) {
+export default function FeedPhotos({ setModalPhoto, user, page, setInfinite }) {
   const { data, loading, error, request } = useFetch();
 
   useEffect(() => {
     async function fetchPhotos() {
-      const { url, options } = api.photosGet({ page: 1, total: 6, user: 0 });
-      request(url, options);
+      const total = 3;
+      const { url, options } = api.photosGet({ page, user, total });
+      const { response, json } = await request(url, options);
+
+      if (response && response.ok && json.length < total) {
+        setInfinite(false);
+      }
     }
 
     fetchPhotos();
-  }, [request]);
+  }, [request, user, page, setInfinite]);
 
   if (error) return <Error message={error} />;
   if (loading) return <Loading />;
