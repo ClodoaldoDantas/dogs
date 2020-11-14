@@ -101,6 +101,30 @@ const api = {
       },
     };
   },
+  passwordLost(body) {
+    return {
+      url: `${baseUrl}/api/password/lost`,
+      options: {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      },
+    };
+  },
+  passwordReset(body) {
+    return {
+      url: `${baseUrl}/api/password/reset`,
+      options: {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      },
+    };
+  },
 };
 
 export default api;
