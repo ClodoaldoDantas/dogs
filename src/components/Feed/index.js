@@ -12,7 +12,7 @@ export default function Feed({ user }) {
   useEffect(() => {
     let wait;
 
-    function infiniteScroll(event) {
+    function infiniteScroll() {
       if (infinite) {
         const scroll = window.scrollY;
         const height = document.body.offsetHeight - window.innerHeight;
@@ -52,6 +52,18 @@ export default function Feed({ user }) {
           setInfinite={setInfinite}
         />
       ))}
+
+      {!infinite && !user && (
+        <p
+          style={{
+            textAlign: 'center',
+            padding: '2rem 0 4rem 0',
+            color: '#888',
+          }}
+        >
+          Não existem mais postagens.
+        </p>
+      )}
     </div>
   );
 }
