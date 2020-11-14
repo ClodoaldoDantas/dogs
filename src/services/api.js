@@ -125,6 +125,17 @@ const api = {
       },
     };
   },
+  statsGet() {
+    return {
+      url: `${baseUrl}/api/stats`,
+      options: {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      },
+    };
+  },
 };
 
 export default api;
