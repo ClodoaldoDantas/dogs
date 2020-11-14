@@ -15,7 +15,10 @@ export default function PhotoComments(props) {
 
   return (
     <>
-      <ul ref={commentsSection} className='comments'>
+      <ul
+        ref={commentsSection}
+        className={`comments ${props.single ? 'single' : ''}`}
+      >
         {comments.map((comment) => (
           <li key={comment.comment_ID}>
             <strong>{comment.comment_author}: </strong>
@@ -25,7 +28,11 @@ export default function PhotoComments(props) {
       </ul>
 
       {isLogged && (
-        <PhotoCommentsForm setComments={setComments} id={props.id} />
+        <PhotoCommentsForm
+          single={props.single}
+          setComments={setComments}
+          id={props.id}
+        />
       )}
     </>
   );

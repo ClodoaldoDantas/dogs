@@ -6,12 +6,12 @@ import { UserContext } from '../../../context/UserContext';
 import PhotoDelete from '../PhotoDelete';
 import Image from '../../Image';
 
-export default function PhotoContent({ data }) {
+export default function PhotoContent({ data, single }) {
   const { photo, comments } = data;
   const user = useContext(UserContext);
 
   return (
-    <div className='photo'>
+    <div className={`photo ${single ? 'single' : ''}`}>
       <div className='photo-img'>
         <Image src={photo.src} alt={photo.title} />
       </div>
@@ -35,7 +35,7 @@ export default function PhotoContent({ data }) {
           </ul>
         </div>
       </div>
-      <PhotoComments id={photo.id} comments={comments} />
+      <PhotoComments single={single} id={photo.id} comments={comments} />
     </div>
   );
 }

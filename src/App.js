@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import User from './pages/User';
+import Photo from './pages/Photo';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { UserProvider } from './context/UserContext';
@@ -18,6 +19,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/login/*' element={<Login />} />
+          <Route path='/foto/:id' element={<Photo />} />
           <ProtectedRoute path='/conta/*' element={<User />} />
         </Routes>
         {/* <Footer /> */}

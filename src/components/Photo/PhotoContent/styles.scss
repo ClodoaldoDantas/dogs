@@ -12,6 +12,21 @@
   transform: scale(0.8);
   animation: scaleUp 0.3s forwards;
 
+  &.single {
+    height: auto;
+    grid-template-columns: 1fr;
+
+    .photo-img {
+      border-radius: 0.4rem;
+      overflow: hidden;
+      grid-row: 1;
+    }
+
+    .photo-details {
+      padding: 1rem 0 0 0;
+    }
+  }
+
   &-details {
     padding: 2rem 2rem 0 2rem;
   }
